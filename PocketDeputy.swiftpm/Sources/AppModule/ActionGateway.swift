@@ -95,15 +95,15 @@ struct ActionGateway {
 
         for kw in Self.highSignalKeywords where lower.contains(kw) {
             score += 3
-            triggeredSignals.append(""\(kw)"")
+            triggeredSignals.append("\"\(kw)\"")
         }
         for kw in Self.urgencyKeywords where lower.contains(kw) {
             score += 1
-            triggeredSignals.append(""\(kw)"")
+            triggeredSignals.append("\"\(kw)\"")
         }
         for kw in Self.overrideKeywords where lower.contains(kw) {
             score += 2
-            triggeredSignals.append(""\(kw)"")
+            triggeredSignals.append("\"\(kw)\"")
         }
 
         // ── 3. Hard-block on high injection score ────────────────────────────
@@ -165,7 +165,7 @@ struct ActionGateway {
 
         // Safe-listed hosts are allowed regardless of channel trust when no injection signal present
         if isSafeHost && injectionScore == 0 {
-            return GatewayResult(decision: .allow, reason: "URL host "\(host)" is on the safe-list with no injection signals.")
+            return GatewayResult(decision: .allow, reason: "URL host \"\(host)\" is on the safe-list with no injection signals.")
         }
 
         if isSafeHost && injectionScore > 0 {
@@ -174,9 +174,9 @@ struct ActionGateway {
 
         // Unknown / unsafe host
         if injectionScore > 0 {
-            return GatewayResult(decision: .block, reason: "Unknown host "\(host)" combined with injection signals. Blocked.")
+            return GatewayResult(decision: .block, reason: "Unknown host \"\(host)\" combined with injection signals. Blocked.")
         }
-        return GatewayResult(decision: .confirm, reason: "URL host "\(host)" is not on the safe-list. Please confirm before navigating.")
+        return GatewayResult(decision: .confirm, reason: "URL host \"\(host)\" is not on the safe-list. Please confirm before navigating.")
     }
 
     private func evaluateComposeMessage(channel: Channel, injectionScore: Int) -> GatewayResult {

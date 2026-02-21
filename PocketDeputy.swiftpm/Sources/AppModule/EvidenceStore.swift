@@ -97,20 +97,20 @@ final class EvidenceStore: ObservableObject {
         case .composeMessage:
             let to   = call.args["to"]   ?? "(unknown)"
             let body = call.args["body"] ?? "(empty)"
-            return "[Simulated] Would send message to \(to): "\(body)""
+            return "[Simulated] Would send message to \(to): \"\(body)\""
 
         case .copyToClipboard:
             let text = call.args["text"] ?? "(empty)"
-            return "[Simulated] Would copy to clipboard: "\(text)""
+            return "[Simulated] Would copy to clipboard: \"\(text)\""
 
         case .saveLocalNote:
             let content = call.args["content"] ?? "(empty)"
-            return "[Simulated] Local note saved: "\(content)""
+            return "[Simulated] Local note saved: \"\(content)\""
 
         case .createCalendarReminder:
             let title = call.args["title"]   ?? "(no title)"
             let date  = call.args["dateISO"] ?? "(no date)"
-            return "[Simulated] Would create calendar reminder "\(title)" at \(date)"
+            return "[Simulated] Would create calendar reminder \"\(title)\" at \(date)"
         }
     }
 
