@@ -21,7 +21,7 @@ struct SimulatorView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
 
@@ -33,7 +33,7 @@ struct SimulatorView: View {
                             }
                         }
                         .pickerStyle(.segmented)
-                        .onChange(of: selectedChannel) { _ in
+                        .onChange(of: selectedChannel) { _, _ in
                             selectedScenario = nil
                             inputText = ""
                         }
@@ -59,7 +59,7 @@ struct SimulatorView: View {
                                     Text(s.name).tag(Optional(s))
                                 }
                             }
-                            .onChange(of: selectedScenario) { s in
+                            .onChange(of: selectedScenario) { _, s in
                                 if let s { inputText = s.inputText }
                             }
                         }

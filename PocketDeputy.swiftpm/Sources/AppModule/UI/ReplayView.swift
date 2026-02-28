@@ -10,7 +10,7 @@ struct ReplayView: View {
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             Group {
                 if store.isEmpty {
                     VStack(spacing: 16) {
