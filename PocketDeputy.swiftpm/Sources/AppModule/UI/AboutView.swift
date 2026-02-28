@@ -21,7 +21,7 @@ import SwiftUI
 
 struct AboutView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
 
                 // ── Why it matters ───────────────────────────────────────────

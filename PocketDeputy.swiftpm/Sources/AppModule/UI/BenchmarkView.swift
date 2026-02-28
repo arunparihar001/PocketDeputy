@@ -13,7 +13,7 @@ struct BenchmarkView: View {
     private let runner = BenchmarkRunner()
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
 

@@ -9,7 +9,7 @@ struct WelcomeView: View {
     @Binding var hasSeenWelcome: Bool
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 28) {
 
@@ -71,7 +71,7 @@ struct WelcomeView: View {
                     .padding(.bottom, 40)
                 }
             }
-            .navigationBarHidden(true)
+            .toolbar(.hidden, for: .navigationBar)
         }
     }
 }
