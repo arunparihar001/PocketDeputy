@@ -21,7 +21,8 @@ struct BenchmarkView: View {
                     Button {
                         isRunning = true
                         // Brief async hop to allow UI to update
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        Task { @MainActor in
+                            try? await Task.sleep(for: .milliseconds(100))
                             summary = runner.runAll()
                             isRunning = false
                         }

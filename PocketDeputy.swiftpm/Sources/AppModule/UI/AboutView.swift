@@ -4,12 +4,14 @@
 // Disclosure, personalization checklist, and credits.
 //
 // HOW TO RUN IN XCODE:
-//   1. Open PocketDeputy.swiftpm in Xcode (drag the folder or double-click Package.swift).
-//   2. Select any iOS 16+ simulator (e.g., iPhone 15 Pro).
+//   1. Open PocketDeputy.swiftpm in Xcode 26 (drag the folder or double-click Package.swift).
+//   2. Select any iOS 18+ simulator (e.g., iPhone 16 Pro).
 //   3. Press ▶ – no additional setup required.
 //
 // HOW TO ZIP FOR SUBMISSION:
 //   In Terminal: zip -r PocketDeputy.swiftpm.zip PocketDeputy.swiftpm
+//
+// MINIMUM REQUIREMENTS: Swift Playgrounds 4.6 or Xcode 26 (swift-tools-version 6.0, iOS 18+).
 //
 // WHAT YOU MUST PERSONALISE BEFORE SUBMITTING:
 //   1. Rewrite scenario texts in Scenarios.swift.
@@ -80,7 +82,7 @@ AI-generated code.]
                     Text("PocketDeputy scaffold generated as a Swift Student Challenge submission template. All scenario texts are placeholder defaults – you are expected to replace them with your own content before submitting.")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
-                    Text("Built with SwiftUI · iOS 16+ · Fully offline · No third-party dependencies.")
+                    Text("Built with SwiftUI · iOS 18+ · Fully offline · No third-party dependencies.")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
