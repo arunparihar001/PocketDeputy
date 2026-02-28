@@ -63,6 +63,7 @@ struct ReplayView: View {
 struct EvidenceCard: View {
     let evidence: Evidence
 
+    @MainActor
     private static let dateFormatter: DateFormatter = {
         let f = DateFormatter()
         f.timeStyle = .medium
