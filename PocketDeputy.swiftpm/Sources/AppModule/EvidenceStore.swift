@@ -1,20 +1,22 @@
 // EvidenceStore.swift
 // PocketDeputy: Mobile Agent Prompt-Injection Safety Lab
 //
-// Central ObservableObject that holds all evidence records and orchestrates
+// Central @Observable store that holds all evidence records and orchestrates
 // the agent → gateway → simulated-execution pipeline.
 // Everything runs on the MainActor; no network calls are made.
 
 import SwiftUI
+import Observation
 
+@Observable
 @MainActor
-final class EvidenceStore: ObservableObject {
+final class EvidenceStore {
 
-    // MARK: - Published state
+    // MARK: - Observable state
 
-    @Published var history: [Evidence] = []
-    @Published var lastEvidence: Evidence?
-    @Published var isRunning: Bool = false
+    var history: [Evidence] = []
+    var lastEvidence: Evidence?
+    var isRunning: Bool = false
 
     // MARK: - Dependencies
 

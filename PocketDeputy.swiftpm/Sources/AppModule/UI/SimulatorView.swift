@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct SimulatorView: View {
-    @EnvironmentObject private var store: EvidenceStore
+    @Environment(EvidenceStore.self) private var store
 
     // ── Picker state ─────────────────────────────────────────────────────────
     @State private var selectedChannel: Channel = .notification
@@ -128,7 +128,7 @@ struct SimulatorView: View {
                         }
                         .sheet(isPresented: $showReplay) {
                             ReplayView()
-                                .environmentObject(store)
+                                .environment(store)
                         }
                     }
                 }
@@ -143,7 +143,7 @@ struct SimulatorView: View {
 // MARK: - ResultPanel
 
 private struct ResultPanel: View {
-    @EnvironmentObject private var store: EvidenceStore
+    @Environment(EvidenceStore.self) private var store
     let evidence: Evidence
 
     var body: some View {
