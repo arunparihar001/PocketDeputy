@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct ReplayView: View {
-    @EnvironmentObject private var store: EvidenceStore
+    @Environment(EvidenceStore.self) private var store
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
