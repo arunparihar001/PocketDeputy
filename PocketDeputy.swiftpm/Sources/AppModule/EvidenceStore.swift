@@ -49,7 +49,7 @@ final class EvidenceStore: ObservableObject {
         }
 
         // 5. Build evidence record
-        var evidence = Evidence(
+        let evidence = Evidence(
             channel: channel,
             rawInput: input,
             agentProposal: proposal,
